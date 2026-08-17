@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tulilunia | Cuentos para imaginar y soñar</title>
+
+  <meta
+    name="description"
+    content="Tulilunia es un universo de cuentos, personajes, música y calma para leer, escuchar, imaginar y soñar."
+  >
+
+  <style>
+    :root {
+      --noche: #06142f;
+      --noche-2: #0b2148;
+      --azul-suave: #163669;
+      --oro: #ffd875;
+      --oro-claro: #fff1b7;
+      --rosa: #f4a8c4;
+      --lila: #bca9ff;
+      --blanco: #fffdf8;
+      --texto-suave: #d8e2f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(62, 92, 171, .28), transparent 30%),
+        radial-gradient(circle at 80% 25%, rgba(92, 60, 150, .22), transparent 25%),
+        linear-gradient(180deg, #030b1e 0%, var(--noche) 38%, #071836 100%);
+      color: var(--blanco);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ESTRELLAS */
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background-image:
+        radial-gradient(circle, #fff 1px, transparent 1.5px),
+        radial-gradient(circle, var(--oro) 1px, transparent 2px),
+        radial-gradient(circle, #b8ccff 1px, transparent 1.6px);
+
+      background-size:
+        93px 93px,
+        141px 141px,
+        187px 187px;
+
+      background-position:
+        5px 20px,
+        40px 65px,
+        90px 15px;
+
+      opacity: .65;
+    }
+
+    body::after {
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,216,117,.15), transparent 1%),
+        radial-gradient(circle at 75% 12%, rgba(255,255,255,.14), transparent 1%),
+        radial-gradient(circle at 63% 57%, rgba(244,168,196,.12), transparent 1%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* CABECERA */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+
+      background: rgba(3, 11, 30, .76);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: clamp(1.65rem, 4vw, 2.25rem);
+
+      color: var(--blanco);
+
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: var(--oro);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--texto-suave);
+      font-size: .95rem;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: var(--oro);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+
+      align-items: center;
+
+      gap: 50px;
+
+      padding: 80px 0 55px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--oro);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+
+      font-size: .75rem;
+
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      line-height: .93;
+
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--rosa);
+    }
+
+    .hero h2 {
+      font-family: Georgia, serif;
+      color: var(--oro);
+
+      font-weight: normal;
+
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+
+      margin-bottom: 20px;
+    }
+
+    .hero-copy p {
+      color: var(--texto-suave);
+
+      font-size: 1.08rem;
+      line-height: 1.8;
+
+      max-width: 560px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 35px;
+    }
+
+    .button {
+      padding: 15px 25px;
+      border-radius: 999px;
+
+      font-weight: bold;
+
+      border: 1px solid rgba(255,255,255,.17);
+
+      transition: .25s;
+
+      display: inline-block;
+    }
+
+    .button-main {
+      background: var(--oro);
+      color: #18203a;
+
+      box-shadow: 0 0 25px rgba(255,216,117,.25);
+    }
+
+    .button-main:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(255,216,117,.28);
+    }
+
+    .button-alt {
+      background: rgba(255,255,255,.04);
+    }
+
+    .button-alt:hover {
+      background: rgba(255,255,255,.09);
+    }
+
+    /* ARTE HERO */
+
+    .hero-art {
+      position: relative;
+      min-height: 570px;
+    }
+
+    .moon {
+      position: absolute;
+
+      width: 340px;
+      height: 340px;
+
+      right: 3%;
+      top: 2%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(circle at 35% 35%, #fff7ca 0%, #ffe78b 27%, #e8b744 72%);
+
+      box-shadow:
+        0 0 40px rgba(255,222,119,.3),
+        0 0 90px rgba(255,222,119,.16);
+    }
+
+    .moon::after {
+      content: "";
+
+      position: absolute;
+
+      width: 315px;
+      height: 315px;
+
+      border-radius: 50%;
+
+      background: #081a3c;
+
+      left: -72px;
+      top: -36px;
+    }
+
+    .magic {
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        radial-gradient(circle at 45% 37%, var(--oro) 0 2px, transparent 3px),
+        radial-gradient(circle at 59% 21%, #fff 0 1px, transparent 3px),
+        radial-gradient(circle at 77% 63%, var(--rosa) 0 2px, transparent 3px),
+        radial-gradient(circle at 31% 71%, var(--oro) 0 2px, transparent 3px);
+
+      filter: drop-shadow(0 0 8px var(--oro));
+    }
+
+    /*
+       AQUÍ IRÁ LA ILUSTRACIÓN OFICIAL DEL GRUPO.
+       Cuando subamos la imagen:
+       assets/personajes-tulilunia.png
+    */
+
+    .characters-placeholder {
+      position: absolute;
+
+      bottom: 10px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: min(620px, 100%);
+
+      padding: 25px;
+
+      border-radius: 32px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.06),
+          rgba(255,255,255,.025)
+        );
+
+      border: 1px dashed rgba(255,216,117,.35);
+
+      text-align: center;
+
+      color: #b9c7df;
+
+      backdrop-filter: blur(7px);
+    }
+
+    .characters-placeholder strong {
+      display: block;
+      color: var(--oro-claro);
+
+      margin-bottom: 8px;
+    }
+
+    /* ACCESOS */
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 17px;
+
+      padding-bottom: 100px;
+    }
+
+    .portal {
+      min-height: 210px;
+
+      border-radius: 27px;
+
+      padding: 30px 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(25,54,105,.65),
+          rgba(8,22,53,.72)
+        );
+
+      border: 1px solid rgba(255,216,117,.28);
+
+      transition: .3s;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portal:hover {
+      transform: translateY(-7px);
+
+      border-color: var(--oro);
+
+      box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    }
+
+    .portal .icon {
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      font-size: 1.7rem;
+
+      background: rgba(255,216,117,.09);
+
+      margin-bottom: 23px;
+
+      border: 1px solid rgba(255,216,117,.25);
+    }
+
+    .portal h3 {
+      color: var(--oro);
+
+      font-family: Georgia, serif;
+
+      font-size: 1.4rem;
+
+      margin-bottom: 11px;
+    }
+
+    .portal p {
+      color: var(--texto-suave);
+      line-height: 1.55;
+
+      font-size: .92rem;
+    }
+
+    /* SECCIONES */
+
+    section.content {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--rosa);
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, serif;
+
+      font-weight: normal;
+
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+
+      margin-top: 13px;
+    }
+
+    /* CUENTO DESTACADO */
+
+    .story {
+      display: grid;
+
+      grid-template-columns: .9fr 1.1fr;
+
+      gap: 45px;
+
+      align-items: center;
+
+      padding: 38px;
+
+      border-radius: 32px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(30,61,116,.6),
+          rgba(11,28,65,.58)
+        );
+
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .story-image {
+      aspect-ratio: 16 / 10;
+
+      border-radius: 25px;
+
+      background:
+        radial-gradient(circle at 50% 75%, rgba(255,216,117,.35), transparent 10%),
+        linear-gradient(155deg, #163a70, #071632);
+
+      display: grid;
+      place-items: center;
+
+      color: rgba(255,255,255,.55);
+
+      text-align: center;
+
+      padding: 30px;
+    }
+
+    .story-copy h3 {
+      font-family: Georgia, serif;
+
+      color: var(--oro);
+
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+
+      margin-bottom: 18px;
+    }
+
+    .story-copy p {
+      color: var(--texto-suave);
+
+      line-height: 1.8;
+
+      margin-bottom: 25px;
+    }
+
+    /* PRÓXIMAMENTE */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: 25px;
+
+      padding: 28px 22px;
+
+      min-height: 260px;
+
+      background:
+        linear-gradient(
+          160deg,
+          rgba(26,58,112,.57),
+          rgba(6,20,47,.65)
+        );
+
+      border: 1px solid rgba(255,216,117,.2);
+    }
+
+    .card-visual {
+      height: 100px;
+
+      display: grid;
+      place-items: center;
+
+      font-size: 2.7rem;
+
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      color: var(--oro);
+
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--texto-suave);
+
+      line-height: 1.55;
+
+      font-size: .9rem;
+    }
+
+    /* ESCUCHA */
+
+    .listen {
+      text-align: center;
+
+      padding: 85px 0;
+    }
+
+    .platforms {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+    .platform {
+      padding: 14px 22px;
+
+      border: 1px solid rgba(255,216,117,.3);
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.035);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.09);
+
+      text-align: center;
+
+      color: #aebbd2;
+
+      padding: 38px 20px;
+
+      font-size: .9rem;
+    }
+
+    footer strong {
+      color: var(--rosa);
+    }
+
+    /* MÓVIL */
+
+    @media (max-width: 900px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 65px;
+      }
+
+      .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-art {
+        min-height: 500px;
+      }
+
+      .moon {
+        width: 280px;
+        height: 280px;
+
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .moon::after {
+        width: 260px;
+        height: 260px;
+      }
+
+      .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-art {
+        min-height: 420px;
+      }
+
+      .quick-links,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .portal {
+        min-height: auto;
+      }
+
+      .story {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="#inicio" class="logo">
+      <span>☾</span> Tulilunia
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#cuentos">Cuentos</a></li>
+        <li><a href="#dormir">Para dormir</a></li>
+        <li><a href="#personajes">Personajes</a></li>
+        <li><a href="#escucha">Escucha</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+<section class="container hero" id="inicio">
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">
+      Un lugar para imaginar despacio
+    </div>
+
+    <h1>
+      Tuli<span>lunia</span>
+    </h1>
+
+    <h2>
+      Cuentos y canciones para dormir
+    </h2>
+
+    <p>
+      Un pequeño universo de historias, personajes,
+      música y calma para leer, escuchar, imaginar
+      y soñar en familia.
+    </p>
+
+    <div class="buttons">
+
+      <a class="button button-main" href="#cuentos">
+        Descubre los cuentos
+      </a>
+
+      <a class="button button-alt" href="#dormir">
+        Para dormir
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-art">
+
+    <div class="moon"></div>
+
+    <div class="magic"></div>
+
+    <div class="characters-placeholder">
+
+      <strong>
+        ✨ Aquí aparecerá el grupo oficial de Tulilunia
+      </strong>
+
+      Estela · Pablo · Bruno · Arturo · Daniel · Tina
+      <br>
+      + Brisa cuando corresponda
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <div class="quick-links">
+
+    <a href="#cuentos" class="portal">
+
+      <div class="icon">📖</div>
+
+      <h3>Cuentos</h3>
+
+      <p>
+        Historias para descubrir nuevos caminos,
+        emociones y pequeños mundos.
+      </p>
+
+    </a>
+
+
+    <a href="#dormir" class="portal">
+
+      <div class="icon">☾</div>
+
+      <h3>Para dormir</h3>
+
+      <p>
+        Cuentos tranquilos, música suave
+        y momentos para bajar el ritmo.
+      </p>
+
+    </a>
+
+
+    <a href="#personajes" class="portal">
+
+      <div class="icon">✦</div>
+
+      <h3>Personajes</h3>
+
+      <p>
+        Conoce a Estela y a todos los amigos
+        que forman el universo de Tulilunia.
+      </p>
+
+    </a>
+
+
+    <a href="#escucha" class="portal">
+
+      <div class="icon">♫</div>
+
+      <h3>Escucha</h3>
+
+      <p>
+        Cuentos narrados y música
+        para disfrutar también con los ojos cerrados.
+      </p>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="content" id="cuentos">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>Cuentos</small>
+
+      <h2>
+        Historias que dejan una luz encendida
+      </h2>
+
+    </div>
+
+
+    <article class="story">
+
+      <div class="story-image">
+
+        IMAGEN OFICIAL DEL CUENTO
+        <br><br>
+
+        Estela y el camino de las luces perdidas
+
+      </div>
+
+
+      <div class="story-copy">
+
+        <h3>
+          Estela y el camino de las luces perdidas
+        </h3>
+
+        <p>
+          Una noche, el bosque parece haber olvidado
+          cómo iluminar el camino.
+          Estela tendrá que avanzar sin poder ver
+          todos los pasos que quedan por delante.
+        </p>
+
+        <a class="button button-main" href="#">
+          Muy pronto
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="content" id="dormir">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>Para dormir</small>
+
+      <h2>
+        Cuando el día baja la voz
+      </h2>
+
+    </div>
+
+    <div class="story">
+
+      <div class="story-copy">
+
+        <h3>
+          Un rincón para terminar el día
+        </h3>
+
+        <p>
+          Música tranquila, cuentos narrados y vídeos
+          pensados para acompañar los últimos minutos
+          antes de dormir.
+        </p>
+
+        <a class="button button-alt" href="#escucha">
+          Escuchar Tulilunia
+        </a>
+
+      </div>
+
+
+      <div class="story-image">
+
+        ☾
+        <br><br>
+        AQUÍ IRÁ ESTELA DURMIENDO
+        <br>
+        CON EL PÁJARO
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="content" id="personajes">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>Personajes</small>
+
+      <h2>
+        Los habitantes de Tulilunia
+      </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-visual">⭐</div>
+        <h3>Estela</h3>
+        <p>El corazón de muchas de nuestras historias.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-visual">🦊</div>
+        <h3>Arturo</h3>
+        <p>Curioso, creativo y siempre dispuesto a descubrir algo nuevo.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-visual">🐦</div>
+        <h3>Daniel</h3>
+        <p>Un pequeño compañero con muchísimo que decir.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-visual">🐢</div>
+        <h3>Tina</h3>
+        <p>Porque no todos los caminos tienen que recorrerse deprisa.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="content">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>Próximamente</small>
+
+      <h2>
+        Tulilunia seguirá creciendo
+      </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="card-visual">📚</div>
+
+        <h3>Nuevos cuentos</h3>
+
+        <p>
+          Nuevas aventuras para leer y escuchar.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-visual">♫</div>
+
+        <h3>Nuevas canciones</h3>
+
+        <p>
+          Música tranquila para acompañar historias
+          y sueños.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-visual">✦</div>
+
+        <h3>Actividades</h3>
+
+        <p>
+          Dibujos, juegos y pequeños rincones
+          para crear.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-visual">📖</div>
+
+        <h3>Libros</h3>
+
+        <p>
+          Los libros de Tulilunia también tendrán
+          aquí su propia biblioteca.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="listen" id="escucha">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>Escucha</small>
+
+      <h2>
+        Tulilunia también suena
+      </h2>
+
+    </div>
+
+
+    <div class="platforms">
+
+      <span class="platform">
+        ▶ YouTube
+      </span>
+
+      <span class="platform">
+        ◉ Spotify
+      </span>
+
+      <span class="platform">
+        ♪ Apple Music
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  © 2026 <strong>Tulilunia</strong>
+  · Cuentos para leer, escuchar, imaginar y soñar.
+
+</footer>
+
+</body>
+</html>
