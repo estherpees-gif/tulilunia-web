@@ -140,10 +140,10 @@
     /* HERO */
 
     .hero {
-      width: min(1380px, 94%);
+      width: min(1380px, calc(100% - 48px));
       min-height: 680px;
       display: grid;
-      grid-template-columns: .82fr 1.35fr;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.35fr);
       align-items: center;
       gap: 42px;
       padding: 65px 0 70px;
@@ -153,6 +153,7 @@
     .hero-copy {
       position: relative;
       z-index: 3;
+      min-width: 0;
     }
 
     .eyebrow {
@@ -167,8 +168,9 @@
     h1 {
       font-family: Georgia, serif;
       font-weight: normal;
-      font-size: clamp(3.2rem, 7vw, 6.4rem);
+      font-size: clamp(3rem, 6vw, 5.6rem);
       line-height: .93;
+      letter-spacing: -.03em;
       margin-bottom: 25px;
     }
 
@@ -469,8 +471,8 @@
       }
 
       .hero {
-        width: min(1180px, 90%);
-        grid-template-columns: 1fr;
+        width: min(1180px, calc(100% - 32px));
+        grid-template-columns: minmax(0, 1fr);
         text-align: center;
         padding-top: 55px;
       }
