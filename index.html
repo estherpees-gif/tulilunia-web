@@ -110,14 +110,17 @@
     }
 
     .logo {
-      font-family: Georgia, serif;
-      font-size: clamp(1.65rem, 4vw, 2.25rem);
-      color: var(--blanco);
-      letter-spacing: .5px;
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
     }
 
-    .logo span {
-      color: var(--oro);
+    .logo img {
+      display: block;
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     nav ul {
@@ -470,6 +473,11 @@
         display: none;
       }
 
+      .logo img {
+        width: 58px;
+        height: 58px;
+      }
+
       .hero {
         width: min(1180px, calc(100% - 32px));
         grid-template-columns: minmax(0, 1fr);
@@ -534,8 +542,8 @@
 <header>
   <div class="container nav">
 
-    <a href="#inicio" class="logo">
-      <span>☾</span> Tulilunia
+    <a href="#inicio" class="logo" aria-label="Tulilunia · Inicio">
+      <img src="logoredondo.png" alt="Tulilunia">
     </a>
 
     <nav>
